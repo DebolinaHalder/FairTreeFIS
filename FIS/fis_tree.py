@@ -79,11 +79,7 @@ class fis_tree(fis_score):
                 X_right = self.train_x_with_protected[right]
                 y_left = self.train_y[left]
                 y_right = self.train_y[right]
-                #if n == 0:
-                    #self.eqop_at_node[0] = 1 - fairness_rndm(X_left, y_left, X_right, y_right,self.number_of_features,0,1)
-                    #self.dp_at_node[0] = 1 - fairness_rndm(X_left, y_left, X_right, y_right,self.number_of_features,0,2)
-                    #self.eqop_at_1 = 1 - previous_fairness(X_left, y_left, X_right, y_right,self.number_of_features,0,1)
-                    #self.dp_at_1 = 1 - previous_fairness(X_left, y_left, X_right, y_right,self.number_of_features,0,2)
+                
                 if self.multiclass == True:
                     self.eqop_at_node[0] = 0
                     self.dp_at_node[0] = 0
@@ -102,9 +98,8 @@ class fis_tree(fis_score):
                     self.eqop_at_node[self.children_left[n]] = self.eqop_at_node[self.children_right[n]] = fairness(X_left, y_left, X_right, y_right,self.number_of_features,0,1,self.triangle)
                     self.dp_at_node[self.children_left[n]] = self.dp_at_node[self.children_right[n]] = fairness(X_left, y_left, X_right, y_right,self.number_of_features,0,2,self.triangle)
                     
-                #self.eqop_at_node[self.children_left[n]] = 1 - fairness_rndm(X_left, y_left, X_right, y_right,self.number_of_features,0,1)
-                #self.dp_at_node[self.children_left[n]] = 1 - fairness_rndm(X_left, y_left, X_right, y_right,self.number_of_features,0,1)
-        print("done calculating at each node")
+                
+        
         
 
     def fairness_importance_score(self):
@@ -133,14 +128,14 @@ class fis_tree(fis_score):
             self._fairness_importance_score_eqop_root /= np.sum(abs(self._fairness_importance_score_eqop_root))
 
     def calculate_fairness_importance_score(self):
-        print("here")
+        
         path = self.fitted_clf.decision_path(self.train_x)
         samples = path.shape[0]
         [self.samples_at_node.setdefault(i, []) for i in range(self.n_nodes)]
         for i in range(samples):
             for(j) in range(self.n_nodes):
                 if path[i, j] != 0:
-                    #print(i,j)
+                    
                     self.samples_at_node[j].append(i)
         self.calculate_fairness_at_each_node()
         self.fairness_importance_score()

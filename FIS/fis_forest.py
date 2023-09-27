@@ -65,25 +65,6 @@ class fis_forest(fis_score):
 
 
     def _importance_for_each_tree(self,tree):
-        '''
-        n_samples = self.train_x.shape[0] # number of training samples
-
-        n_samples_bootstrap = forest_utils._get_n_samples_bootstrap(
-            n_samples, rf.max_samples
-        )
-
-        unsampled_indices_trees = []
-        sampled_indices_trees = []
-
-        for estimator in rf.estimators_:
-            unsampled_indices = forest_utils._generate_unsampled_indices(
-                estimator.random_state, n_samples, n_samples_bootstrap)
-            unsampled_indices_trees.append(unsampled_indices)
-
-            sampled_indices = forest_utils._generate_sample_indices(
-                estimator.random_state, n_samples, n_samples_bootstrap)
-            sampled_indices_trees.append(sampled_indices)
-        '''
         
         individual_tree = fis_tree(tree, self.train_x, self.train_y, self.protected_attribute, self.protected_value, normalize=False, regression=self.regression, multiclass=self.multiclass, triangle=self.triangle)
         individual_tree.calculate_fairness_importance_score()
