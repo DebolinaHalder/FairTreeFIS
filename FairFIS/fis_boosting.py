@@ -26,7 +26,7 @@ FairFIS.
         Value is True is fitted_clf is a Regressor
     multiclass: bool, Default = False
         The value is set to True for Multiclass Classification
-    triangle: bool, Default = True
+    triangle: bool, Default = False
         True when triangle inequality is used
 
     -----------
