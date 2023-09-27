@@ -1,7 +1,7 @@
 import numpy as np
 
-from FIS.base import fis_score
-from FIS.util import *
+from FairFIS.base import fis_score
+from FairFIS.util import *
 
 """
 A class to modify sklearn tree to calculate

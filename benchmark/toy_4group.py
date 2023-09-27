@@ -5,11 +5,11 @@ from scipy.stats import pearsonr
 import pandas as pd
 import math
 from sklearn.tree import DecisionTreeClassifier,DecisionTreeRegressor
-from FIS import fis_tree, fis_forest, fis_boosting
+from FairFIS import fis_tree, fis_forest, fis_boosting
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.ensemble import GradientBoostingClassifier,GradientBoostingRegressor
 from sklearn.model_selection import RandomizedSearchCV
-from FIS import util
+from FairFIS import util
 import matplotlib.pyplot as plt
 #%%
 def select_beta(elements_per_group,b):
@@ -81,7 +81,7 @@ def toy_4group(elements_per_group, total_samples,z_prob,mean_1,mean_2,beta):
 
 # %%
 elements_per_group = 3
-iterations = 10
+iterations = 1
 number_of_s = [1000]
 signals = [1.5]
 total_features = elements_per_group * 4 + 1
@@ -104,12 +104,12 @@ for number_of_samples in number_of_s:
             
             
             #parameters = {'max_features':[0.5, 0.6, 0.7, 0.8]}
-            clf = DecisionTreeClassifier()
+            clf = GradientBoostingClassifier()
             clf.fit(x,y)
             #clf = RandomizedSearchCV(estimator = rf, param_distributions = parameters)
 
             #####our approach#########
-            f_forest = fis_tree(clf,x,y,z,0,triangle = False)
+            f_forest = fis_boosting(clf,x,y,z,0,triangle = False)
             #f_forest.fit(x,y)
             f_forest.calculate_fairness_importance_score()
             #f_forest.get_root_node_fairness()
