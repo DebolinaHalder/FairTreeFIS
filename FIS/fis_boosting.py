@@ -42,7 +42,7 @@ FairFIS.
 """
 
 
-class fis_boosting():
+class fis_boosting(fis_score):
     def __init__(self, fitted_clf,train_x,train_y, protected_attribute, protected_value, normalize = True, regression = False, multiclass = False,triangle = False):
         self.fitted_clf = fitted_clf
         self.train_x = train_x

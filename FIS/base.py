@@ -5,7 +5,7 @@ class fis_score(ABC):
         super().__init__()
 
     @abstractmethod
-    def fit(self, X=None, y=None):
+    def calculate_fairness_importance_score(self):
         r"""
         Fits the tree or forest and gives fairness score.
         Parameters
@@ -17,24 +17,4 @@ class fis_score(ABC):
         """
         pass
     
-    @abstractmethod
-    def predict_proba(self, X):
-        r"""
-        Calculate posteriors using the tree.
-        Parameters
-        ----------
-        X : ndarray
-            Input data matrix.
-        """
-        pass
-
-    @abstractmethod
-    def predict(self, X):
-        r"""
-        Perform inference using the tree or forest.
-        Parameters
-        ----------
-        X : ndarray
-            Input data matrix.
-        """
-        pass
+    

@@ -41,7 +41,7 @@ FairFIS.
 
 
 
-class fis_tree():
+class fis_tree(fis_score):
     def __init__(self, fitted_clf,train_x,train_y, protected_attribute, protected_value, normalize = True, regression = False,multiclass = False,alpha = 1, triangle = False):
         self.fitted_clf = fitted_clf
         self.train_x = train_x

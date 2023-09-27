@@ -1,5 +1,4 @@
 #%%
-
 import numpy as np
 from scipy.special import expit
 from scipy.stats import pearsonr
@@ -11,7 +10,6 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.ensemble import GradientBoostingClassifier,GradientBoostingRegressor
 from sklearn.model_selection import RandomizedSearchCV
 from FIS import util
-from FIS import shapley
 import matplotlib.pyplot as plt
 #%%
 def select_beta(elements_per_group,b):
@@ -111,7 +109,7 @@ for number_of_samples in number_of_s:
             #clf = RandomizedSearchCV(estimator = rf, param_distributions = parameters)
 
             #####our approach#########
-            f_forest = fis_tree(clf,x,y,z,0,triangle = True)
+            f_forest = fis_tree(clf,x,y,z,0,triangle = False)
             #f_forest.fit(x,y)
             f_forest.calculate_fairness_importance_score()
             #f_forest.get_root_node_fairness()
@@ -127,7 +125,7 @@ for number_of_samples in number_of_s:
                 eqop_fis[k].append(fis_eqop[k])
                 accuracy[k].append(feature_importance[k])
         for i in range(4*elements_per_group):
-                    result_df = pd.concat([result_df,pd.Series({'fis_dp':np.mean(fis_dp[i]),'fis_eqop':np.mean(fis_eqop[i]),'dp_std':np.var(dp_fis[i]),'eq_std':np.var(dp_fis[i]),'accuracy':np.mean(accuracy[i]),'accuracy_var':np.var(accuracy[i])}).to_frame()])
+                    result_df = pd.concat((result_df,pd.DataFrame({'fis_dp':np.mean(fis_dp[i]),'fis_eqop':np.mean(fis_eqop[i]),'dp_std':np.var(dp_fis[i]),'eq_std':np.var(dp_fis[i]),'accuracy':np.mean(accuracy[i]),'accuracy_var':np.var(accuracy[i])},index=[0])))
 
         name = "result07/lin"+str(number_of_samples)+"_"+"rf3.csv"
         #result_df.to_csv(name)
