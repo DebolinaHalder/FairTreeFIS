@@ -18,7 +18,7 @@ You can manually download ``fairFIS`` by cloning the git repo master version and
 running the ``setup.py`` file. That is, unzip the compressed package folder
 and run the following from the top-level source directory using the Terminal::
 
-    $ git clone https://github.com/neurodata/kdg](https://github.com/DebolinaHalder/fairFIS.git
+    $ git clone https://github.com/DebolinaHalder/fairFIS.git
     $ cd fairFIS
     $ python3 setup.py install
 
