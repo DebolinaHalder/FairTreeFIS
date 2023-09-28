@@ -1,4 +1,4 @@
-# fairFIS
+# FairFIS
 Fair Feature Importance Scores for Interpreting Tree-Based Methods and Surrogates.
 
 Install
