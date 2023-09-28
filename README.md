@@ -24,7 +24,7 @@ and run the following from the top-level source directory using the Terminal::
 
 Or, alternatively, you can use ``pip``::
 
-    $ git clone https://github.com/neurodata/kdg](https://github.com/DebolinaHalder/fairFIS.git
+    $ git clone https://github.com/DebolinaHalder/fairFIS.git
     $ cd fairFIS
     $ pip install .
 
