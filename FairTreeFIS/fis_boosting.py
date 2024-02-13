@@ -8,7 +8,7 @@ from joblib import Parallel, delayed
 
 """
 A class to modify sklearn Gradient Boosted Trees to calculate
-FairFIS.
+FairBoostingFIS.
     ----------
     fitted_clf: Classifier or Regressor
        The selector is a trained standard sklearn Gradient Boosted Trees

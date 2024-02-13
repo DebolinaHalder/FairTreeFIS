@@ -5,7 +5,7 @@ from FairFIS.util import *
 
 """
 A class to modify sklearn tree to calculate
-FairFIS.
+FairTreeFIS.
     ----------
     fitted_clf: Classifier or Regressor
        The selector is a trained standard sklearn tree

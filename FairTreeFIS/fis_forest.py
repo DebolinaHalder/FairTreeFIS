@@ -6,7 +6,7 @@ from joblib import Parallel, delayed
 import sklearn.ensemble._forest as forest_utils
 """
 A class to modify sklearn Random Forests to calculate
-FairFIS.
+FairForestFIS.
     ----------
     fitted_clf: Classifier or Regressor
        The selector is a trained standard sklearn Random Forest
