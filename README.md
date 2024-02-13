@@ -18,13 +18,13 @@ You can manually download ``FairTreeFIS`` by cloning the git repo master version
 running the ``setup.py`` file. That is, unzip the compressed package folder
 and run the following from the top-level source directory using the Terminal::
 
-    $ git clone https://github.com/DebolinaHalder/FairFIS.git
+    $ git clone https://github.com/DebolinaHalder/FairTreeFIS.git
     $ cd FairFIS
     $ python3 setup.py install
 
 Or, alternatively, you can use ``pip``::
 
-    $ git clone https://github.com/DebolinaHalder/FairFIS.git
+    $ git clone https://github.com/DebolinaHalder/FairTreeFIS.git
     $ cd FairFIS
     $ pip install .
 
