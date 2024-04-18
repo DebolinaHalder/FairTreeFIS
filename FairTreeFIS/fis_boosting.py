@@ -1,8 +1,8 @@
 import numpy as np
 
-from FairFIS.base import fis_score
-from FairFIS.util import *
-from FairFIS.fis_tree import fis_tree
+from FairTreeFIS.base import fis_score
+from FairTreeFIS.util import *
+from FairTreeFIS.fis_tree import fis_tree
 from joblib import Parallel, delayed
 
 

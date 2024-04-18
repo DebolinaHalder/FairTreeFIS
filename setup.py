@@ -3,7 +3,7 @@ import os
 
 # Find mgc version.
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
-for line in open(os.path.join(PROJECT_PATH, "FairFIS", "__init__.py")):
+for line in open(os.path.join(PROJECT_PATH, "FairTreeFIS", "__init__.py")):
     if line.startswith("__version__ = "):
         VERSION = line.strip().split()[2][1:-1]
 
@@ -15,16 +15,16 @@ with open("requirements.txt", mode="r", encoding = "utf8") as f:
 
 setup(
     #setup_requires=['pybind11>=2.2'],
-    name="FIS",
+    name="FairTreeFIS",
     version=VERSION,
     author="Debolina Halder Lina",
-    author_email="dl73@gmail.com",
+    author_email="dl73@rice.edu",
     maintainer="Debolina Ha;der Lina",
-    maintainer_email="dl73@gmail.com",
+    maintainer_email="dl73@rice.edu",
     description="A fairness importance score",
     #long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/DebolinaHalder/Fairness-Importance-Score-FIS-",
+    url="https://github.com/DebolinaHalder/FairTreeFIS.git",
     license="MIT",
     classifiers=[
         "Intended Audience :: Science/Research",
